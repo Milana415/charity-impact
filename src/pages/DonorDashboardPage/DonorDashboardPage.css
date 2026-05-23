@@ -1,0 +1,373 @@
+.donor-dashboard {
+    padding: 40px 0 80px;
+    background: var(--bg-primary);
+    min-height: 100vh;
+    transition: background 0.3s;
+}
+
+/* Заголовок */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    text-align: left;
+}
+
+.page-description {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.btn-settings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Manrope', sans-serif;
+}
+
+.btn-settings:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Статистика */
+.stats-section {
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(43, 108, 176, 0.15);
+}
+
+.stat-label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Geologica', sans-serif;
+}
+
+/* Таблица пожертвований */
+.donations-section {
+    margin-bottom: 48px;
+}
+
+.donations-table-wrapper {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.donations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donations-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--bg-primary);
+    border-bottom: 2px solid var(--border);
+}
+
+.donations-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.donations-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.donations-table tbody tr:hover {
+    background: var(--bg-primary);
+}
+
+.amount-cell {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #C6F6D5;
+    color: #22543D;
+}
+
+.receipt-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+
+.receipt-link:hover {
+    opacity: 0.7;
+}
+
+.btn-show-more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-show-more:hover {
+    opacity: 0.7;
+}
+
+/* Подписки */
+.subscriptions-section {
+    margin-top: 48px;
+}
+
+.subscriptions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.subscription-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.subscription-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.subscription-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.subscription-content {
+    padding: 20px;
+}
+
+.subscription-category {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.subscription-content h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.3;
+    font-family: 'Geologica', sans-serif;
+}
+
+.subscription-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.subscription-amount {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.subscription-amount strong {
+    color: var(--accent);
+    font-size: 16px;
+}
+
+.subscription-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-details {
+    flex: 1;
+    padding: 10px 16px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.btn-details:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 10px 16px;
+    background: transparent;
+    border: 2px solid var(--danger);
+    border-radius: 12px;
+    color: var(--danger);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Manrope', sans-serif;
+}
+
+.btn-cancel:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subscriptions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donations-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .donations-table {
+        min-width: 600px;
+    }
+}
+
+.header-actions-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-logout {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--danger);
+    color: var(--danger);
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.not-authenticated {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.not-authenticated h2 {
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.not-authenticated p {
+    font-size: 16px;
+    color: var(--text-muted);
+}

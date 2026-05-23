@@ -1,0 +1,169 @@
+.footer {
+    background: var(--footer-bg);
+    padding: 40px 0 24px;
+    color: var(--text-secondary);
+    transition: background 0.3s;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-search {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-search input {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 24px;
+    background: var(--input-bg);
+    font-size: 14px;
+    width: 300px;
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+}
+
+.footer-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.footer-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--accent);
+}
+
+.btn-donate {
+    padding: 10px 24px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-donate:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 48px;
+    padding-bottom: 24px;
+}
+
+.footer-nav-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-nav-column a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.footer-nav-column a:hover {
+    color: var(--accent);
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-social p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-search {
+        width: 100%;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-legal,
+    .footer-social {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

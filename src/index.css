@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Geologica:wght,CRSV@100..900,0&display=swap');
+
+:root {
+  --bg-primary: #F7FAFC;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  --border: #E2E8F0;
+  --accent: #2B6CB0;
+  --accent-hover: #2C5282;
+  --card-bg: #FFFFFF;
+  --input-bg: #FFFFFF;
+  --header-bg: #FFFFFF;
+  --footer-bg: #EBF4FF;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --danger: #E53E3E;
+  --stats-bg: #FFFFFF;
+  --hero-gradient: linear-gradient(135deg, #FFFFFF 0%, #F7FAFC 50%, #EBF4FF 100%);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0B1120;
+  --bg-secondary: #1E293B;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border: #334155;
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+  --card-bg: #1E293B;
+  --input-bg: #0F172A;
+  --header-bg: #0B1120;
+  --footer-bg: #0F172A;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --danger: #F87171;
+  --stats-bg: #1E293B;
+  --hero-gradient: linear-gradient(135deg, #0B1120 0%, #1E293B 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Geologica', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

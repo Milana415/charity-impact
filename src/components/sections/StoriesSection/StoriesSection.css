@@ -1,0 +1,74 @@
+.stories {
+    padding: 60px 0;
+    background: var(--bg-primary);
+    transition: background 0.3s;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.story-card {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.story-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.story-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.story-info h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.story-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    margin-top: 4px;
+}
+
+.story-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.story-result {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+}
