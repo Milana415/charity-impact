@@ -70,21 +70,19 @@
 }
 
 .search-bar {
-    background: var(--bg-primary);
-    padding: 12px 0;
     border-top: 1px solid rgba(43, 108, 176, 0.1);
-}
-
-[data-theme="dark"] .search-bar {
-    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a3c4a 100%);
+    background: var(--bg-primary);
 }
 
 .search-bar__content {
+    background: rgba(165, 209, 247, 0.4);
+    padding: 8px 20px 12px 20px;
+    border-radius: 0 0 20px 20px;
     display: flex;
     gap: 12px;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 0 0 0 auto;
 }
 
 .search-bar input {

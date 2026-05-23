@@ -39,7 +39,6 @@ export const DonationModal = ({ isOpen, onClose, programId, programTitle }: Dona
             return;
         }
 
-        // Здесь логика отправки пожертвования
         console.log({
             amount: finalAmount,
             email,

@@ -176,7 +176,6 @@ export const ProgramsPage = () => {
                         </div>
                     </div>
 
-                    {/* Активные фильтры */}
                     {(selectedTag || showUrgent || sortBy !== 'newest') && (
                         <div className="active-filters">
                             <span className="active-filters-label">Активные фильтры:</span>
@@ -250,7 +249,6 @@ export const ProgramsPage = () => {
                         </div>
                     )}
 
-                    {/* Пагинация */}
                     {totalPages > 1 && (
                         <div className="pagination">
                             <button

@@ -11,7 +11,6 @@ export const AboutPage = () => {
             <main className="about-page">
                 <div className="container">
                     <div className="about-layout">
-                        {/* Левая колонка - основной контент */}
                         <div className="about-main">
                             <div className="about-hero-image">
                                 <img src="/images/about/hands.jpg" alt="Руки держат бумажные фигурки людей" />
@@ -69,7 +68,6 @@ export const AboutPage = () => {
                             </div>
                         </div>
 
-                        {/* Правая колонка - сайдбар с программами */}
                         <aside className="about-sidebar">
                             <h2 className="sidebar-title">Поддержите нас</h2>
                             <div className="sidebar-programs">

@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
 import { AuthModal } from '../../modals/AuthModal/AuthModal';
-import { DonationModal } from '../../modals/DonationModal/DonationModal';
 import { useTheme } from '../../../context/ThemeContext';
 import './Header.css';
 
@@ -10,7 +9,20 @@ export const Header = () => {
     const { user, logout } = useAuth();
     const { theme, toggleTheme } = useTheme();
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-    const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+            setSearchQuery('');
+        }
+    };
+
+    const handleSupportClick = () => {
+        navigate('/programs');
+    };
 
     return (
         <>
@@ -68,21 +80,23 @@ export const Header = () => {
 
                 <div className="search-bar">
                     <div className="container">
-                        <div className="search-bar__content">
-                            <input type="text" placeholder="Поиск по сайту" />
-                            <button className="search-btn">
+                        <form className="search-bar__content" onSubmit={handleSearch}>
+                            <input
+                                type="text"
+                                placeholder="Поиск по сайту"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <button type="submit" className="search-btn">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <circle cx="11" cy="11" r="8" />
                                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                                 </svg>
                             </button>
-                            <button
-                                className="btn-donate"
-                                onClick={() => setIsDonationModalOpen(true)}
-                            >
+                            <button type="button" className="btn-donate" onClick={handleSupportClick}>
                                 Поддержать
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </header>

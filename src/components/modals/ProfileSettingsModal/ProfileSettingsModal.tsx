@@ -18,13 +18,12 @@ export const ProfileSettingsModal = ({ isOpen, onClose }: ProfileSettingsModalPr
         email: '',
     });
 
-    // Загружаем данные пользователя при открытии модального окна
     useEffect(() => {
         if (user && isOpen) {
             setFormData({
                 firstName: user.firstName || '',
                 lastName: user.lastName || '',
-                password: '', // Пароль не показываем
+                password: '',
                 phone: user.phone || '',
                 email: user.email || '',
             });

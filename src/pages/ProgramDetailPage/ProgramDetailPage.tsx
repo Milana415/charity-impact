@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useSubscriptions } from '../../context/SubscriptionsContext';
+import { useDonations } from '../../context/DonationContext';
 import { Header } from '../../components/layout/Header/Header';
 import { Footer } from '../../components/layout/Footer/Footer';
 import { DonationModal } from '../../components/modals/DonationModal/DonationModal';
@@ -14,19 +15,18 @@ export const ProgramDetailPage = () => {
 
     const { user } = useAuth();
     const { addSubscription } = useSubscriptions();
+    const { addDonation } = useDonations();
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
     const [customAmount, setCustomAmount] = useState('');
     const [isMonthly, setIsMonthly] = useState(false);
     const [isAnonymous, setIsAnonymous] = useState(false);
-
-    // Состояния для тултипа и модального окна
     const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
+
     const [tooltipMessage, setTooltipMessage] = useState('');
     const [showTooltip, setShowTooltip] = useState(false);
 
-    // Автослайд
     useEffect(() => {
         if (!program || program.images.length <= 1) return;
         const interval = setInterval(() => {
@@ -55,24 +55,39 @@ export const ProgramDetailPage = () => {
     const nextSlide = () => setCurrentSlide(prev => (prev + 1) % program.images.length);
     const prevSlide = () => setCurrentSlide(prev => (prev - 1 + program.images.length) % program.images.length);
 
-    // Логика наведения на сердце
-    const handleHeartHover = () => {
-        if (!showTooltip) { // Не перезаписывать сообщение об успехе
-            setTooltipMessage('Оформить ежемесячную подписку');
-            setShowTooltip(true);
+    const handleDonate = () => {
+        if (!user) {
+            alert('Пожалуйста, войдите в систему для оформления пожертвования');
+            return;
+        }
+
+        const amount = selectedAmount || Number(customAmount);
+        if (!amount || amount <= 0) {
+            alert('Пожалуйста, выберите или введите сумму');
+            return;
+        }
+
+        const success = addDonation({
+            programId: program.id,
+            programName: program.title,
+            amount: amount,
+            isMonthly: isMonthly,
+            isAnonymous: isAnonymous,
+        });
+
+        if (success) {
+            alert(`Спасибо! Пожертвование ${amount.toLocaleString()} ₽ успешно оформлено.`);
+            setIsDonationModalOpen(false);
+            setSelectedAmount(null);
+            setCustomAmount('');
         }
     };
 
-    const handleHeartLeave = () => {
-        if (!showTooltip) {
-            setShowTooltip(false);
-        }
-    };
-
-    // Логика клика на сердце
     const handleSubscribe = () => {
         if (!user) {
-            alert('Пожалуйста, войдите в систему для оформления подписки');
+            setTooltipMessage('Войдите, чтобы оформить подписку');
+            setShowTooltip(true);
+            setTimeout(() => setShowTooltip(false), 3000);
             return;
         }
 
@@ -86,16 +101,23 @@ export const ProgramDetailPage = () => {
         });
 
         if (success) {
-            setTooltipMessage(`Вы оформили подписку на «${program.title}»`);
+            setTooltipMessage('Вы оформили подписку!');
             setShowTooltip(true);
-
-            setTimeout(() => {
-                setShowTooltip(false);
-                setTooltipMessage('');
-            }, 3000);
+            setTimeout(() => setShowTooltip(false), 3000);
         } else {
-            alert('У вас уже есть активная подписка на эту программу.');
+            alert('У вас уже есть подписка на эту программу.');
         }
+    };
+
+    const handleHeartHover = () => {
+        if (!showTooltip) {
+            setTooltipMessage('Оформить ежемесячную подписку');
+            setShowTooltip(true);
+        }
+    };
+
+    const handleHeartLeave = () => {
+        if (!showTooltip) setShowTooltip(false);
     };
 
     return (
@@ -103,7 +125,6 @@ export const ProgramDetailPage = () => {
             <Header />
             <main className="program-detail-page">
                 <div className="container">
-                    {/* Карусель */}
                     {program.images.length > 1 && (
                         <div className="program-carousel">
                             <button className="carousel-btn prev" onClick={prevSlide}>‹</button>
@@ -119,7 +140,6 @@ export const ProgramDetailPage = () => {
                         </div>
                     )}
 
-                    {/* Хлебные крошки */}
                     <div className="breadcrumbs">
                         <Link to="/">Главная</Link> <span>/</span>
                         <Link to="/programs">Программы</Link> <span>/</span>
@@ -129,7 +149,6 @@ export const ProgramDetailPage = () => {
                     <h1 className="program-title">{program.title}</h1>
 
                     <div className="program-layout">
-                        {/* Левая колонка: Описание */}
                         <div className="program-content">
                             <p className="program-intro">{program.fullDescription.split('\n')[0]}</p>
                             {program.fullDescription.split('\n').slice(1).join('\n').split('\n\n').map((paragraph, index) => (
@@ -148,10 +167,8 @@ export const ProgramDetailPage = () => {
                             </div>
                         </div>
 
-                        {/* Правая колонка: Форма (Новый дизайн) */}
                         <aside className="donation-sidebar">
                             <div className="donation-card">
-                                {/* Прогресс */}
                                 <div className="donation-progress">
                                     <div className="progress-bar-wrapper">
                                         <div className="progress-bar-bg">
@@ -169,7 +186,7 @@ export const ProgramDetailPage = () => {
                                 <div className="donors-count">Доноров: <strong>{program.donors}</strong></div>
                                 <div className="divider-line" />
 
-                                {/* Выбор суммы */}
+
                                 <div className="donation-section">
                                     <p className="donation-label">Выберите сумму для пожертвования:</p>
                                     <div className="amount-buttons">
@@ -198,7 +215,6 @@ export const ProgramDetailPage = () => {
                                     </div>
                                 </div>
 
-                                {/* Тип пожертвования */}
                                 <div className="donation-type">
                                     <label className="radio-option">
                                         <input type="radio" name="donationType" checked={!isMonthly} onChange={() => setIsMonthly(false)} />
@@ -215,9 +231,8 @@ export const ProgramDetailPage = () => {
                                     <span>Анонимно</span>
                                 </label>
 
-                                {/* Кнопки действий */}
                                 <div className="action-row">
-                                    <button className="btn-donate-now" onClick={() => setIsDonationModalOpen(true)}>
+                                    <button className="btn-donate-now" onClick={handleDonate}>
                                         Помочь сейчас
                                     </button>
 
@@ -232,7 +247,6 @@ export const ProgramDetailPage = () => {
                                             </svg>
                                         </button>
 
-                                        {/* Тултип */}
                                         {showTooltip && tooltipMessage && (
                                             <div className="tooltip">
                                                 {tooltipMessage}
@@ -244,7 +258,6 @@ export const ProgramDetailPage = () => {
                         </aside>
                     </div>
 
-                    {/* Истории */}
                     {program.stories.length > 0 && (
                         <section className="stories-section">
                             <h2 className="section-title">Наши истории</h2>

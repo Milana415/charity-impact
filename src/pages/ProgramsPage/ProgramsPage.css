@@ -86,7 +86,6 @@
     color: white;
 }
 
-/* Правая часть тулбара (Сортировка и счетчик) */
 .toolbar-right {
     display: flex;
     align-items: center;
@@ -98,7 +97,6 @@
     color: var(--text-muted);
 }
 
-/* Селект сортировки */
 .sort-select {
     padding: 8px 16px;
     border: 2px solid var(--border);
@@ -116,7 +114,6 @@
     border-color: var(--accent);
 }
 
-/* Активные фильтры (сверху) */
 .active-filters {
     display: flex;
     align-items: center;
@@ -166,9 +163,6 @@
     color: white;
 }
 
-/* =========================================
-   Сетка программ (Карточки)
-   ========================================= */
 .programs-grid-full {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -176,7 +170,6 @@
     margin-bottom: 40px;
 }
 
-/* Ссылка-обертка для карточки */
 .program-card-full-link {
     text-decoration: none;
     color: inherit;
@@ -200,7 +193,6 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Бейдж "Срочно" */
 .urgent-badge {
     position: absolute;
     top: 12px;
@@ -228,7 +220,6 @@
     flex-direction: column;
 }
 
-/* Категория (Синий текст) */
 .program-category-full {
     font-size: 12px;
     color: var(--accent);
@@ -239,7 +230,6 @@
     margin-bottom: 8px;
 }
 
-/* Заголовок программы */
 .program-content-full h3 {
     font-size: 18px;
     color: var(--text-primary);
@@ -249,7 +239,6 @@
     font-weight: 700;
 }
 
-/* Описание программы */
 .program-content-full p {
     font-size: 13px;
     color: var(--text-secondary);
@@ -261,7 +250,6 @@
     overflow: hidden;
 }
 
-/* Прогресс бар */
 .progress-bar-full {
     position: relative;
     height: 6px;
@@ -287,7 +275,6 @@
     color: var(--accent);
 }
 
-/* Статистика (Собрано/Цель) */
 .program-stats-full {
     display: flex;
     justify-content: space-between;
@@ -304,7 +291,6 @@
     font-weight: 600;
 }
 
-/* Кнопка "Помочь" */
 .program-btn-full {
     width: 100%;
     padding: 12px 20px;
@@ -324,9 +310,6 @@
     color: white;
 }
 
-/* =========================================
-   Пустое состояние (Нет программ)
-   ========================================= */
 .no-programs {
     text-align: center;
     padding: 80px 20px;
@@ -367,9 +350,6 @@
     background: var(--accent-hover);
 }
 
-/* =========================================
-   Пагинация
-   ========================================= */
 .pagination {
     display: flex;
     justify-content: center;
@@ -414,9 +394,6 @@
     padding: 0 4px;
 }
 
-/* =========================================
-   Адаптивность
-   ========================================= */
 @media (max-width: 1024px) {
     .programs-grid-full {
         grid-template-columns: repeat(2, 1fr);
