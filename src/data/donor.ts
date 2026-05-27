@@ -57,7 +57,7 @@ export const subscriptions: Subscription[] = [
         programTitle: 'Они умеют любить, как никто другой.',
         category: 'Животные',
         description: 'Кошки из приюта — это самые преданные друзья, которые знают цену дому и уюту.',
-        image: '/images/programs/cat.jpg',
+        image: '/charity-impact/images/programs/cat.jpg',
         amount: 5000,
     },
     {
@@ -66,7 +66,7 @@ export const subscriptions: Subscription[] = [
         programTitle: '«Мир на ощупь»',
         category: 'Помощь детям',
         description: 'Закупка специальных учебников со шрифтом Брайля и обучающих гаджетов для слабовидящих детей.',
-        image: '/images/programs/braille.jpg',
+        image: '/charity-impact/images/programs/braille.jpg',
         amount: 3000,
     },
 ];

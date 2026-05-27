@@ -13,12 +13,12 @@ export const programs: Program[] = [
 
 Многие считают, что в приют попадают «сложные» животные. Мы знаем — это не так. Здесь живут мудрые коты и ласковые кошки, которые знают цену каждой минуте внимания. Их преданность не имеет границ: они чувствуют ваше настроение, умеют утешить в трудную минуту своим тихим мурчанием и ценят уют дома так, как может ценить только тот, кто его однажды терял. Они умеют любить вопреки всему, и эта любовь — самая честная.`,
         forWhom: 'Программа направлена на поддержку более 45 кошек, проживающих в приюте «Уютный дом».',
-        image: '/images/programs/cat.jpg',
+        image: '/charity-impact/images/programs/cat.jpg',
         images: [
-            '/images/programs/cat.jpg',
-            '/images/programs/cat2.jpg',
-            '/images/programs/cat4.jpg',
-            '/images/programs/cat3.jpg',
+            "/charity-impact/images/programs/cat.jpg",
+            "/charity-impact/images/programs/cat2jpg",
+            "/charity-impact/images/programs/cat4jpg",
+            "/charity-impact/images/programs/cat3jpg",
         ],
         raised: 30000,
         goal: 120000,
@@ -37,7 +37,7 @@ export const programs: Program[] = [
                 name: 'Елена',
                 age: 31,
                 role: 'Владелица приюта',
-                image: '/images/stories/elena.jpg',
+                image: '/charity-impact/images/stories/elena.jpg',
                 text: 'Маркиз пришел к нам зимой со сломанной лапой. Честно говоря, шансов было немного. На его лечение требовалась огромная сумма — более 40 тысяч рублей только на первом этапе. Мы объявили экстренный сбор, и я была поражена тем, как быстро люди откликнулись.',
                 result: 'Полное выздоровление после сложной операции.',
             },
@@ -46,7 +46,7 @@ export const programs: Program[] = [
                 name: 'Алина',
                 age: 24,
                 role: 'Графический дизайнер',
-                image: '/images/stories/alina.jpg',
+                image: '/charity-impact/images/stories/alina.jpg',
                 text: 'Я всегда думала, что возьму маленького котенка, но когда пришла в приют, увидела Соню. Ей было уже 7 лет, и она просто сидела в углу, наблюдая за суетой со спокойным достоинством. Волонтеры сказали, что она здесь уже долго — "пожилых" берут неохотно.',
                 result: 'Соня нашла дом после 402 дней в приюте.',
             },
@@ -60,9 +60,9 @@ export const programs: Program[] = [
         description: 'Поддержка системы наставничества для подростков из детских домов.',
         fullDescription: 'Полное описание программы...',
         forWhom: 'Для подростков из детских домов.',
-        image: '/images/programs/mentorship.jpg',
-        images: ['/images/programs/mentorship.jpg',
-            '/images/programs/mentorship.jpg'
+        image: '/charity-impact//images/programs/mentorship.jpg',
+        images: ['/charity-impact//images/programs/mentorship.jpg',
+            '/charity-impact//images/programs/mentorship.jpg'
         ],
         raised: 30000,
         goal: 95000,
@@ -85,9 +85,9 @@ export const programs: Program[] = [
         description: 'Создание инклюзивных футбольных секций для детей с особенностями.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети с особенностями развития.',
-        image: '/images/programs/sport.jpg',
-        images: ['/images/programs/sport.jpg',
-            '/images/programs/sport.jpg'
+        image: '/charity-impact/images/programs/sport.jpg',
+        images: ['/charity-impact/images/programs/sport.jpg',
+            '/charity-impact/images/programs/sport.jpg'
         ],
         raised: 300000,
         goal: 320000,
@@ -110,9 +110,9 @@ export const programs: Program[] = [
         description: 'Оплата операций для детей с пороками сердца.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети с врожденными пороками сердца.',
-        image: '/images/programs/heart.jpg',
-        images: ['/images/programs/heart.jpg',
-            '/images/programs/heart.jpg'
+        image: '/charity-impact/images/programs/heart.jpg',
+        images: ['/charity-impact/images/programs/heart.jpg',
+            '/charity-impact/images/programs/heart.jpg'
         ],
         raised: 300000,
         goal: 450000,
@@ -135,9 +135,9 @@ export const programs: Program[] = [
         description: 'Сбор средств на школьные принадлежности.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети из многодетных семей.',
-        image: '/images/programs/school.jpg',
-        images: ['/images/programs/school.jpg',
-            '/images/programs/school.jpg'
+        image: '/charity-impact/images/programs/school.jpg',
+        images: ['/charity-impact/images/programs/school.jpg',
+            '/charity-impact/images/programs/school.jpg'
         ],
         raised: 50000,
         goal: 250000,
@@ -160,9 +160,9 @@ export const programs: Program[] = [
         description: 'Учебники Брайля для слабовидящих детей.',
         fullDescription: 'Полное описание...',
         forWhom: 'Слабовидящие дети.',
-        image: '/images/programs/braille.jpg',
-        images: ['/images/programs/braille.jpg',
-            '/images/programs/braille.jpg'
+        image: '/charity-impact/images/programs/braille.jpg',
+        images: ['/charity-impact/images/programs/braille.jpg',
+            '/charity-impact/images/programs/braille.jpg'
         ],
         raised: 80000,
         goal: 200000,
@@ -185,9 +185,9 @@ export const programs: Program[] = [
         description: 'Строительство колодцев в засушливых регионах.',
         fullDescription: 'Полное описание...',
         forWhom: 'Жители засушливых регионов.',
-        image: '/images/programs/well.jpg',
-        images: ['/images/programs/well.jpg',
-            '/images/programs/well.jpg'
+        image: '/charity-impact/images/programs/well.jpg',
+        images: ['/charity-impact/images/programs/well.jpg',
+            '/charity-impact/images/programs/well.jpg'
         ],
         raised: 3250000,
         goal: 5000000,
@@ -210,9 +210,9 @@ export const programs: Program[] = [
         description: 'Озеленение дворов в спальных районах.',
         fullDescription: 'Полное описание...',
         forWhom: 'Жители городов.',
-        image: '/images/programs/green.jpg',
-        images: ['/images/programs/green.jpg',
-            '/images/programs/green.jpg'
+        image: '/charity-impact/images/programs/green.jpg',
+        images: ['/charity-impact/images/programs/green.jpg',
+            '/charity-impact/images/programs/green.jpg'
         ],
         raised: 150000,
         goal: 500000,
@@ -235,9 +235,9 @@ export const programs: Program[] = [
         description: 'Собаки ищут новый дом и любящих хозяев. В каждом вольере живет надежда.',
         fullDescription: 'В каждом вольере живет надежда. Эти собаки не знают, что такое «свой диван» или «личная миска», но они точно знают, как искренне радоваться вашему приходу. Поддерживая наш сбор, вы помогаете нам обеспечивать хвостиков кормом и лечением, пока они ждут ту самую встречу с хозяином.',
         forWhom: 'Собаки, оставшиеся без дома.',
-        image: '/images/programs/dog.jpg',
-        images: ['/images/programs/dog.jpg',
-            '/images/programs/dog.jpg'
+        image: '/charity-impact/images/programs/dog.jpg',
+        images: ['/charity-impact/images/programs/dog.jpg',
+            '/charity-impact/images/programs/dog.jpg'
         ],
         raised: 650000,
         goal: 1000000,
@@ -260,9 +260,9 @@ export const programs: Program[] = [
         description: 'Оборудование компьютерного класса.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети в детских домах.',
-        image: '/images/programs/computer.jpg',
-        images: ['/images/programs/computer.jpg',
-            '/images/programs/computer.jpg'
+        image: '/charity-impact/images/programs/computer.jpg',
+        images: ['/charity-impact/images/programs/computer.jpg',
+            '/charity-impact/images/programs/computer.jpg'
         ],
         raised: 120000,
         goal: 300000,
@@ -285,9 +285,9 @@ export const programs: Program[] = [
         description: 'Бесплатный летний лагерь.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети из малообеспеченных семей.',
-        image: '/images/programs/camp.jpg',
-        images: ['/images/programs/camp.jpg',
-            '/images/programs/camp.jpg'
+        image: '/charity-impact/images/programs/camp.jpg',
+        images: ['/charity-impact/images/programs/camp.jpg',
+            '/charity-impact/images/programs/camp.jpg'
         ],
         raised: 200000,
         goal: 400000,
@@ -310,9 +310,9 @@ export const programs: Program[] = [
         description: 'Реабилитация для детей после ДТП.',
         fullDescription: 'Полное описание...',
         forWhom: 'Дети после травм.',
-        image: '/images/programs/rehab-trauma.jpg',
-        images: ['/images/programs/rehab-trauma.jpg',
-            '/images/programs/rehab-trauma.jpg'
+        image: '/charity-impact/images/programs/rehab-trauma.jpg',
+        images: ['/charity-impact/images/programs/rehab-trauma.jpg',
+            '/charity-impact/images/programs/rehab-trauma.jpg'
         ],
         raised: 180000,
         goal: 600000,
