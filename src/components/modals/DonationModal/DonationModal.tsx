@@ -9,7 +9,7 @@ interface DonationModalProps {
     programTitle?: string;
 }
 
-export const DonationModal = ({ isOpen, onClose, programId, programTitle }: DonationModalProps) => {
+export const DonationModal = ({ isOpen, onClose, programId }: DonationModalProps) => {
     const { user } = useAuth();
     const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
     const [customAmount, setCustomAmount] = useState('');

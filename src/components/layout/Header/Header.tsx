@@ -6,7 +6,7 @@ import { useTheme } from '../../../context/ThemeContext';
 import './Header.css';
 
 export const Header = () => {
-    const { user, logout } = useAuth();
+    const { user} = useAuth();
     const { theme, toggleTheme } = useTheme();
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
