@@ -9,5 +9,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      (function() {
+        const redirectPath = sessionStorage.getItem('redirectPath');
+        if (redirectPath && redirectPath !== '/') {
+          window.history.replaceState(null, '', redirectPath);
+          sessionStorage.removeItem('redirectPath');
+        }
+      })();
+    </script>
   </body>
 </html>
